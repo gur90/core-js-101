@@ -312,8 +312,11 @@ function propagateItemsByPositionIndex(/* arr */) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-function get3TopItems(/* arr */) {
-  throw new Error('Not implemented');
+function get3TopItems(arr) {
+  // eslint-disable-next-line array-callback-return, consistent-return
+  return arr.reverse().filter((elem, index) => {
+    if (index < 3) { return elem; }
+  });
 }
 
 
@@ -363,10 +366,13 @@ function sortDigitNamesByNumericOrder(/* arr */) {
  *   [ -1, 1, -1, 1 ]      => 0
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
-function getItemsSum(/* arr */) {
-  throw new Error('Not implemented');
+function getItemsSum(arr) {
+  // eslint-disable-next-line max-len
+  // eslint-disable-next-line no-return-assign, no-undef, no-unused-expressions, array-callback-return, arrow-body-style
+  return arr.reduce((prev, cur) => {
+    return prev + cur;
+  }, 0);
 }
-
 /**
  * Returns the number of all falsy value in the specified array
  *
@@ -412,8 +418,8 @@ function findAllOccurrences(/* arr, item */) {
  *    [1, 2, 3, 4, 5]                   => '1,2,3,4,5'
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
-function toStringList(/* arr */) {
-  throw new Error('Not implemented');
+function toStringList(arr) {
+  return arr.join(',');
 }
 
 
